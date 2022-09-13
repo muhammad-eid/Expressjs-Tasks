@@ -1,0 +1,25 @@
+{{>header}}
+{{>nav}}
+
+<div class="mx-5">
+    {{#each tasks}}
+        {{#if this.status}}
+        <div class="card bg-info">
+        {{else}}
+        <div class="card bg-danger">
+        {{/if}}
+        <h5 class="card-header">{{this.name}}</h5>
+        <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <p class="card-text">{{this.content}}</p>
+            <a href="/show/{{this.id}}" class="btn btn-primary" >Show Task</a>
+            <a href="/changeStatus/{{this.id}}" class="btn btn-primary" >Change Status</a>
+            <a href="/edit/{{this.id}}" class="btn btn-warning" >Edit Task</a>
+            <a href="/delete/{{this.id}}" class="btn btn-danger" >Delete Task</a>
+        </div>
+        </div>
+    {{/each}}
+</div>
+
+{{>footer}}
+    

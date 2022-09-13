@@ -1,0 +1,23 @@
+{{>header}}
+{{>nav}}
+
+<div class="mx-5">
+        {{#if task.status}}
+        <div class="card bg-info">
+        {{else}}
+        <div class="card bg-danger">
+        {{/if}}
+        <h5 class="card-header">{{task.name}}</h5>
+        <div class="card-body">
+            <h5 class="card-title">id:{{task.id}}</h5>
+            <h5 class="card-title">{{task.title}}</h5>
+            <p class="card-text">{{task.content}}</p>
+            <a href="/changeStatus/{{task.id}}" class="btn btn-primary" >Change Status</a>
+            <a href="/edit/{{task.id}}" class="btn btn-warning" >Edit Task</a>
+            <a href="/delete/{{task.id}}" class="btn btn-danger" >Delete Task</a>
+        </div>
+        </div>
+</div>
+
+{{>footer}}
+    
